@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--cleartextTrafficPermitted: 明文流量链接，即HTTP-->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">arpuat.hosting.croc.ru</domain>
+        <domain includeSubdomains="true">api.avon.ru</domain>
+        <domain includeSubdomains="true">arpdevstorage.storage.cloud.croc.ru</domain>
+        <domain includeSubdomains="true">www.googleapis.com</domain>
+        <domain includeSubdomains="true">nabor.avon.ru</domain>
+        <domain includeSubdomains="true">www.avon.ru</domain>
+    </domain-config>
+
+    <!--Enable Clear traffic for debugging-->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">arpdev.hosting.croc.ru</domain>
+        <domain includeSubdomains="true">arpdev.avon.com</domain>
+        <domain includeSubdomains="true">arpqa.avon.com</domain>
+        <domain includeSubdomains="true">arpqap.avon.com</domain>
+        <domain includeSubdomains="true">static-qaf.config.avon.com</domain>
+        <domain includeSubdomains="true">avon-staging.fuseuniversal.com</domain>
+        <domain includeSubdomains="true">avonconnect.fuseuniversal.com</domain>
+        <domain includeSubdomains="true">justconnect.fuseuniversal.com</domain>
+        <domain includeSubdomains="true">office.avon.uk.com</domain>
+        <domain includeSubdomains="true">office.justine.co.za</domain>
+        <domain includeSubdomains="true">ags-ws-eu-ams.prod.avon.com</domain>
+        <domain includeSubdomains="true">arp.avon.kz</domain>
+        <domain includeSubdomains="true">arp.avon.kg</domain>
+        <domain includeSubdomains="true">8.8.8.8</domain>
+        <domain includeSubdomains="true">localhost</domain>
+    </domain-config>
+
+    <!--Charles certificate is installed in "user" directory of phones, not "system".-->
+    <!--The settings bellow access this app to Charles.-->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
